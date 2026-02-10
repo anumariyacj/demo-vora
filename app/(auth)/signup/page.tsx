@@ -10,13 +10,7 @@ const SignupPage = () => {
 
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    
-
     console.log('Registering user...');
-
-
-
     router.push('/login');
   };
 
