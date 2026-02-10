@@ -55,7 +55,7 @@ const navData = [
   {
     title: 'Products',
     icon: ShoppingBag,
-    items: [{ title: 'All products', url: '/products' }],
+    items: [{ title: 'Create products', url: '/products' }],
   },
 ];
 
