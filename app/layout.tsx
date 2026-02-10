@@ -5,6 +5,8 @@ import './globals.css';
 import { usePathname } from 'next/navigation';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { AppSidebar } from '../components/app-sidebar';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useState } from 'react';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({
@@ -22,23 +24,26 @@ export default function RootLayout({
   const isAuthPage =
     pathname === '/login' || pathname === '/signup' || pathname === '/';
 
+  const [queryClient] = useState(() => new QueryClient());
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {isAuthPage ? (
-          <main>{children}</main>
-        ) : (
-          <SidebarProvider>
-            <div className="flex min-h-screen w-full">
-              <AppSidebar />
-              <main className="flex flex-1 flex-col">
-                <div className="p-6">{children}</div>
-              </main>
-            </div>
-          </SidebarProvider>
-        )}
+        <QueryClientProvider client={queryClient}>
+          {isAuthPage ? (
+            <main>{children}</main>
+          ) : (
+            <SidebarProvider>
+              <div className="flex min-h-screen w-full">
+                <AppSidebar />
+                <main className="flex flex-1 flex-col">
+                  <div className="p-6">{children}</div>
+                </main>
+              </div>
+            </SidebarProvider>
+          )}
+        </QueryClientProvider>
       </body>
     </html>
   );

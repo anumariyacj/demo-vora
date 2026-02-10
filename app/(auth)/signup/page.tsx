@@ -11,13 +11,7 @@ const SignupPage = () => {
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Typically you'd grab form data here:
-    // const formData = new FormData(e.currentTarget);
-
     console.log('Registering user...');
-
-    // Simulate an API delay
-    // await registerUser(formData);
 
     router.push('/login');
   };
@@ -29,7 +23,6 @@ const SignupPage = () => {
       </h2>
 
       <form className="flex flex-col gap-4" onSubmit={handleRegister}>
-        {/* Applied h-12 and rounded-none to all for consistency */}
         <Input placeholder="Full Name" className="h-12 rounded-none" required />
         <Input
           placeholder="Email Address"

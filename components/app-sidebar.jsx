@@ -31,6 +31,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
+import { title } from 'process';
 
 const navData = [
   {
@@ -50,6 +51,11 @@ const navData = [
       { title: 'Men', url: '/bags/men' },
       { title: 'Kids', url: '/bags/kids' },
     ],
+  },
+  {
+    title: 'Products',
+    icon: ShoppingBag,
+    items: [{ title: 'All products', url: '/products' }],
   },
 ];
 
