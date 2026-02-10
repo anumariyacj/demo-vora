@@ -67,7 +67,7 @@ const ProductPage = () => {
 
         <input
           type="number"
-          value={form.price}
+          value={form.price === 0 ? '' : form.price}
           onChange={e => setForm({ ...form, price: Number(e.target.value) })}
           placeholder="Product price"
           className="w-full border rounded p-2"
