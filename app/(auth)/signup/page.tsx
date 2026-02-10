@@ -27,7 +27,6 @@ const SignupPage = () => {
       </h2>
 
       <form className="flex flex-col gap-4" onSubmit={handleRegister}>
-        {/* Applied h-12 and rounded-none to all for consistency */}
         <Input placeholder="Full Name" className="h-12 rounded-none" required />
         <Input
           placeholder="Email Address"
